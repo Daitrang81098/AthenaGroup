@@ -21,8 +21,8 @@
 
 @media (max-width: 768px) {
   .RedRect {
-    width: 40%;
-    padding-top: 40%;
+    width: 80px;
+    padding-top: 40px;
   }
 }
 
