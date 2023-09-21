@@ -8,13 +8,22 @@
 }
 
 .RedRect {
-  width: 15vw;
-  height: 20vh;
+  /*width: 20%;*/
+  /*padding-top: 20%;*/
   background-color: #840707;
   position: absolute;
   cursor: pointer;
   text-align: center;
   color: white;
+  touch-action: none;
+}
+
+
+@media (max-width: 768px) {
+  .RedRect {
+    width: 40%;
+    padding-top: 40%;
+  }
 }
 
 .Coordinates {
