@@ -1,53 +1,56 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
 }
 
 .RedRect {
-  background-color: #840707;
-  position: absolute;
-  cursor: pointer;
-  text-align: center;
-  color: white;
-  touch-action: none;
+    font-size: 13px;
+    background-color: #840707;
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    left: 60vw;
+    top: 5vh;
+    display: flex;
+    touch-action: none;
 }
 
 
 @media (max-width: 768px) {
-  .RedRect {
-    width: 40px;
-    height: 40px;
-    padding-top: 40px;
-  }
+    .RedRect {
+        left: 50vw;
+        top: 4vh;
+    }
 }
 
 .Coordinates {
-  margin-top: 100px;
-  font-size: 15px;
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  padding:4vw;
-  position: absolute;
-  left: 60vw;
-  top: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    margin-top: 100px;
+    font-size: 15px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 4vw;
+    position: absolute;
+    left: 60vw;
+    top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .TextInRedRect {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15vw;
-  height: 20vh;
-  color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 20vh;
+    color: white;
 }
 
 .XCoord, .YCoord {
-  margin: 5px 0;
+    margin: 5px 0;
 }
