@@ -8,8 +8,11 @@ const App: React.FC = () => {
     const dragStartPoint = useRef({ x: 0, y: 0 });
 
     const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
+        e.preventDefault(); // Ngăn chặn hành vi mặc định
         startDragging(e.clientX, e.clientY);
+        document.addEventListener("mouseup", handleMouseUp);
     };
+
 
     const handleMouseMove = (e: MouseEvent) => {
         if (isDragging) {
