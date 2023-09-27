@@ -1,5 +1,7 @@
 import React, { useState, useRef, MouseEvent, TouchEvent } from "react";
 import "./App.css";
+import RedRect from "./component/RedRect.tsx";
+import Coordinates from "./component/Coordinates";
 
 const App: React.FC = () => {
     const [redRectPosition, setRedRectPosition] = useState({ x: 0, y: 0 });
@@ -8,11 +10,10 @@ const App: React.FC = () => {
     const dragStartPoint = useRef({ x: 0, y: 0 });
 
     const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
-        e.preventDefault(); // Ngăn chặn hành vi mặc định
+        e.preventDefault();
         startDragging(e.clientX, e.clientY);
         document.addEventListener("mouseup", handleMouseUp);
     };
-
 
     const handleMouseMove = (e: MouseEvent) => {
         if (isDragging) {
@@ -69,19 +70,17 @@ const App: React.FC = () => {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
         >
-            <div
-                className="RedRect"
-                ref={redRectRef}
-                style={{ left: redRectPosition.x, top: redRectPosition.y }}
-                onMouseDown={handleMouseDown}
-                onTouchStart={handleTouchStart}
-            >
-                <div className="TextInRedRect">RedRect</div>
-            </div>
-            <div className="Coordinates">
-                <div className="XCoord">X:{redRectPosition.x.toFixed(0)}</div>
-                <div className="YCoord">Y:{redRectPosition.y.toFixed(0)}</div>
-            </div>
+            <RedRect
+                redRectPosition={redRectPosition}
+                redRectRef={redRectRef}
+                isDragging={isDragging}
+                startDragging={startDragging}
+                moveRedRect={moveRedRect}
+                stopDragging={stopDragging}
+                handleMouseDown={handleMouseDown}
+                handleTouchStart={handleTouchStart}
+            />
+            <Coordinates x={redRectPosition.x} y={redRectPosition.y} />
         </div>
     );
 };
